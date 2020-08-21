@@ -1,0 +1,13 @@
+telemetry ietf subscription 101
+ encoding encode-kvgpb
+ filter xpath /process-cpu-ios-xe-oper:cpu-usage/cpu-utilization/five-seconds
+ stream yang-push
+ update-policy periodic 500
+ receiver ip address x.x.x.x 57000 protocol grpc-tcp
+ 
+telemetry ietf subscription 102
+ encoding encode-kvgpb
+ filter xpath /if:interfaces-state/interface/oper-status
+ stream yang-push
+ update-policy periodic 500
+ receiver ip address x.x.x.x 57000 protocol grpc-tcp
